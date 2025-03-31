@@ -1,0 +1,99 @@
+/* Center the Form Properly */
+.complaint-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    width: 490px;
+    text-align: left;
+    
+    /* Center on Page */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Success Alert Box */
+.success-box {
+    background-color: #d4edda;  /* Light green */
+    color: #155724;  /* Dark green */
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    text-align: center;
+    font-weight: bold;
+    width: 60%;
+    margin-left: 17%;
+}
+
+h2{
+    color: #002B5B;
+    text-align: center;
+}
+
+/* Increase Space Between Fields */
+label {
+    font-weight: bold;
+    display: flex;
+    align-items: center;  /* Align checkbox properly */
+    gap: 8px; /* Space between text and checkbox */
+    margin-top: 12px;
+    color: #002B5B;
+}
+
+
+
+input::placeholder, textarea::placeholder {
+    color: #888;
+}
+
+input, select, textarea {
+    width: 94%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+select
+{
+    width: 485px;
+}
+
+/* Improve Button Styling */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1D5B79;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #154a5f;
+}
+
+/* Footer at Bottom */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>File a Complaint</title>{% endblock %}
+    
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/editcomplaint.css' %}">
+{% endblock %}
+
+    
+{% block content %}
+<div class="complaint-container">
+    <h2>Edit a Complaint</h2>
+
+    <form method="POST" id="complaint-form">
+        {% csrf_token %}
+
+        <label>Complaint Type</label>
+        <select name="complaint_type" required>
+            {% for type in complaint_types %}
+                <option value="{{ type }}" {% if complaint.complaint_type == type %}selected{% endif %}>
+                    {{ type }}
+                </option>
+            {% endfor %}
+        </select>
+        
+
+        <label>Complaint Title</label>
+        <input type="text" name="title" value="{{ complaint.title }}" placeholder="Enter complaint title" required>
+
+        <label>Complaint Description</label>
+        <textarea name="description" rows="4"  placeholder="Enter details..." required>{{ complaint.description }}</textarea>
+
+        <label>Submit Anonymously<input type="checkbox" name="anonymous" value="anonymous"> </label>
+        
+        <button type="submit" class="btn">Save Complaint</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+body {
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Wrap logo and login box together */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    position: relative;
+}
+
+/* Fix Logo Alignment */
+.logo {
+    width: 110px; 
+    height: auto;
+    background: white; 
+    padding: 5px;
+    border-radius: 50%; 
+    margin-top: 15px;
+}
+
+/* Login Box */
+.login-container {
+    width: 400px;
+    height: 450px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+
+h4{
+   /* color: #1D5B79; */
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #0a58ca;
+}
+
+/* Space below login button */
+.login-button {
+    margin-top: 50px;
+}
+
+
+/* Align Sign Up & Forgot Password */
+.auth-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between links */
+    margin-top: 15px; /* Space below login button */
+}
+
+/* Link Styling */
+pre{
+    text-decoration: none;
+    color: #0a4eb5;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #004085;
+}
+
+
+
+
+
+
+
+

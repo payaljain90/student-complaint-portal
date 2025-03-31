@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* ========== First Navbar (Main Navigation) ========== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #EAF2FB; /* Light Blue */
+    padding: 12px 20px;
+    color: #002B5B;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 43px;
+    margin-right: 9px;
+}
+
+.navbar .logo span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar .nav-icons {
+    display: flex;
+    gap: 40px;
+}
+
+.navbar .nav-icons a {
+    position: relative;
+    color: #002B5B;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+/* Tooltip Styling */
+.nav-item {
+    position: relative;
+}
+
+.nav-item .tooltip {
+    position: absolute;
+    bottom: -25px; /* Position below icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-item:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-icons i {
+    transition: transform 0.2s ease-in-out;
+}
+.nav-icons a:hover i {
+    transform: scale(1.2);
+}
+
+/* Icon Hover Effect */
+.navbar .nav-icons a:hover {
+    color: #1D5B79;
+}
+
+/* ========== Second Navbar (Student Info) ========== */
+.student-navbar {
+    background: linear-gradient(to bottom, #ffffff, #f0f4f8);
+    color: #002B5B;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #d6e0ea;
+}
+
+.student-navbar .name{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 120px;
+}
+
+.student-navbar .reg{
+    margin-left: 270px;
+}
+
+.student-navbar .course{
+    margin-left: 230px;
+}
+
+/* ========== Footer ========== */
+.footer {
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    border-top: 2px solid #BFD8EB;
+    background: #1D5B79;
+}
+

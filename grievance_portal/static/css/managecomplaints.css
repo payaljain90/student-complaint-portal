@@ -1,0 +1,173 @@
+/* Container Styling */
+.complaints-container {
+    width: 80%;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.complaints-container h2 {
+    text-align: center;
+    color: #002B5B;
+}
+
+/* Table Styling */
+.complaints-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.complaints-table th, .complaints-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.complaints-table th {
+    background-color: #1D5B79;
+    color: white;
+}
+
+.complaints-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Status Colors */
+.status {
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status.pending { background: orange; color: white; }
+.status.in-progress { background: blue; color: white; }
+.status.resolved { background: green; color: white; }
+.status.rejected { background: red; color: white; }
+
+/* No Complaints Message */
+.no-complaints {
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* Controls: Search, Filter & Sort */
+.controls-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: nowrap;
+    padding: 0 20px;
+}
+
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 60px;
+}
+
+.search-box input {
+    padding: 8px;
+    width: 190px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Dropdown Styling */
+.filter-container, .sort-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-container label{
+    font-weight: bold;
+    color: #002B5B;
+    margin-left: 110px;
+}
+.sort-container label {
+    font-weight: bold;
+    color: #002B5B;
+    margin-left: 150px;
+}
+
+.filter-container select, .sort-container select{
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 150px;
+}
+
+.complaints-table td {
+    display: flex;
+    gap: 10px;  /* Adds space between buttons */
+    align-items: center;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    width: auto;
+}
+
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+}
+
+.withdraw-btn {
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+}
+
+.disabled-btn {
+    background-color: #ccc;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Hover Effects */
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.withdraw-btn:hover {
+    background-color: #c82333;
+}
+
+/* fixing footer */
+.complaints-container {
+    flex-grow: 1;
+    min-height: 57vh; /* Adjust height to keep footer at the bottom */
+}
+
+/* Fix footer to stay at bottom */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #1D5B79;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

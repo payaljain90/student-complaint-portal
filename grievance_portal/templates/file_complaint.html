@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>File a Complaint</title>{% endblock %}
+    
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/filecomplaintstyle.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kevdevz/cute-alert/cute-alert.css">
+{% endblock %}
+
+    
+{% block content %}
+<div class="complaint-container">
+    <h2>File a Complaint</h2>
+
+    <form method="POST" id="complaint-form">
+        {% csrf_token %}
+
+        <label>Complaint Type</label>
+        <select name="complaint_type" required>
+            <option value="Academic">Academic</option>
+            <option value="Hostel">Hostel</option>
+            <option value="Mess">Mess</option>
+            <option value="Facilities">Facilities</option>
+            <option value="Faculties">Faculties</option>
+            <option value="Canteen">Canteen</option>
+            <option value="Others">Others</option>
+        </select>
+
+        <label>Complaint Title</label>
+        <input type="text" name="title" placeholder="Enter complaint title" required>
+
+        <label>Complaint Description</label>
+        <textarea name="description" rows="4" placeholder="Enter details..." required></textarea>
+
+        <label>Submit Anonymously<input type="checkbox" name="anonymous" value="anonymous"> </label>
+        
+        <button type="submit" class="btn">Submit Complaint</button>
+    </form>
+</div>
+{% endblock %}

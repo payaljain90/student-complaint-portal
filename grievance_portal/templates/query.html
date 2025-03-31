@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Submit & View Queries</title>{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/query.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="query-container">
+    <h2>Submit a Query</h2>
+    
+    <form method="POST" enctype="multipart/form-data" class="query-form">
+        {% csrf_token %}
+        <label>Title</label>
+        <input type="text" name="title" required placeholder="Enter query title">
+        
+        <label>Description</label>
+        <textarea name="description" rows="4" required placeholder="Describe the issue..."></textarea>
+        
+        <label>Query Type</label>
+        <select name="query_type" required>
+            <option value="Bug/Error">Bug/Error</option>
+            <option value="UI Issue">UI Issue</option>
+            <option value="Login Issue">Login Issue</option>
+            <option value="Feature Request">Feature Request</option>
+            <option value="Other">Other</option>
+        </select>
+        
+        <label>Module</label>
+        <select name="module" required>
+            <option value="Login">Login</option>
+            <option value="Sign Up">Sign Up</option>
+            <option value="Dashboard">Dashboard</option>
+            <option value="Complaint Management">Complaint Management</option>
+            <option value="Profile">Profile</option>
+            <option value="Other">Other</option>
+        </select>
+        
+        <label>Screenshot / Evidence (Optional)</label>
+        <input type="file" name="evidence" accept="image/*">
+        
+        <label>URL (Optional)</label>
+        <input type="url" name="url" placeholder="Provide a relevant URL">
+        
+        <button type="submit" class="submit-btn">Submit Query</button>
+    </form>
+</div>
+
+<hr>
+
+<div class="queries-container">
+    <h2>My Submitted Queries</h2>
+    <table class="queries-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Module</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for query in queries %}
+            <tr>
+                <td>{{ query.title }}</td>
+                <td>{{ query.query_type }}</td>
+                <td>{{ query.module }}</td>
+                <td><span class="status {{ query.status|lower }}">{{ query.status }}</span></td>
+                <td>{{ query.created_at|date:"d M Y" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="no-queries">No queries submitted yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

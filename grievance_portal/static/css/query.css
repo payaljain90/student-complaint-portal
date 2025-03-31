@@ -1,0 +1,132 @@
+/* Container Styling */
+.query-container {
+    width: 80%;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.query-container h2 {
+    text-align: center;
+    color: #1D5B79;
+}
+
+/* Form Styling */
+.query-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f8f9fa;
+}
+
+.query-form label {
+    font-weight: bold;
+    color: #002B5B;
+}
+
+.query-form input,
+.query-form textarea,
+.query-form select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+
+.query-form textarea {
+    resize: vertical;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #1D5B79 !important;
+    color: white !important;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #164A5F !important;
+}
+
+
+/* queries container */
+.queries-container {
+    width: 80%;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.queries-container h2 {
+    text-align: center;
+    color: #1D5B79;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+/* Query Table */
+.queries-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.queries-table th, .queries-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.queries-table th {
+    background-color: #1D5B79;
+    color: white;
+}
+
+.queries-table tr:hover {
+    background-color: #e9ecef;
+}
+
+.no-queries {
+    text-align: center;
+    color: #1D5B79;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* Status Colors */
+.status {
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status.pending { background: orange; color: white; }
+.status.in-progress { background: blue; color: white; }
+.status.resolved { background: green; color: white; }
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .query-container {
+        width: 90%;
+        padding: 15px;
+    }
+}

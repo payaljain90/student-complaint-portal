@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+{% endblock %}
+
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="card-container">
+        <!-- File a Complaint -->
+        <a href="{% url 'file_complaint' %}" class="dashboard-card-link">
+            <div class="dashboard-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>File a Complaint</h3>
+                <p>Submit a new complaint regarding any issue.</p>
+                <br>
+                <span class="btn">File Now</span>
+            </div>
+        </a>
+
+        <!-- View Complaints -->
+        <a href="{% url 'view_complaints' %}" class="dashboard-card-link">
+            <div class="dashboard-card">
+                <i class="fas fa-eye"></i>
+                <h3>View Complaints</h3>
+                <p>Check the status of your submitted complaints.</p>
+                <span class="btn">View</span>
+            </div>
+        </a>
+
+        <!-- Manage Complaints -->
+        <a href="{% url 'manage_complaints' %}" class="dashboard-card-link">
+            <div class="dashboard-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Manage Complaints</h3>
+                <p>Track and update your complaints.</p>
+                <br>
+                <span class="btn">Manage</span>
+            </div>
+        </a>        
+    </div>
+</div>
+{% endblock %}

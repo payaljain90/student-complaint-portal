@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Student Grievance Portal</title>{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
+    {% block extra_css %}{% endblock %}
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    
+    <header>
+    <!-- First Navbar (Main Navigation) -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/pccoe.jpg' %}" alt="College Logo">
+            <span>PIMPRI CHINCHWAD COLLEGE OF ENGINEERING</span>
+        </div>
+        <div class="nav-icons">
+            <a href="{% url 'home' %}" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span class="tooltip">Home</span>
+            </a>   
+            <a href="{% url 'about' %}" class="nav-item">
+                <i class="fas fa-info-circle"></i>
+                <span class="tooltip">About Us</span>
+            </a>  
+            <a href="{% url 'query' %}" class="nav-item">
+                <i class="fas fa-question-circle"></i>
+                <span class="tooltip">Query</span>
+            </a>  
+            <a href="{% url 'logout' %}" class="nav-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="tooltip">Logout</span>
+            </a>
+            <a href="{% url 'profile' %}" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span class="tooltip">Profile</span>
+            </a>
+        </div>
+    </div>
+    
+
+    <!-- Second Navbar (Student Info) -->
+    <div class="student-navbar">
+        <div class="name">Welcome, {{ student.name }}</div>
+        <div class="reg">Registration No. {{ student.prn }}</div>
+        <div class="course">{{ student.department }}</div>
+    </div>
+    </header>
+
+    <main>
+    <!-- Page Content -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <strong>Designed & Developed by PCCOE MCA Department | &copy; 2025 Student Grievance Portal<strong>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>About Us | Student Grievance Portal</title>{% endblock %}
+
+{%  block extra_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+{% endblock %}
+{% block content %}
+<!-- Header Section -->
+<div class="about-header">
+    <h1>About Us</h1>
+    <p>Ensuring student voices are heard and grievances are resolved.</p>
+</div>
+
+<!-- Description Section -->
+<div class="about-content">
+    <h2>What is the Student Grievance Portal?</h2>
+    <p>
+        The Student Grievance Portal is a platform designed to help students report 
+        and resolve issues related to academics, hostel, facilities, faculty, and more.
+    </p>
+
+    <!-- Key Features -->
+    <h2>Our Key Features</h2>
+    <div class="features-container">
+        <div class="feature">
+            <i class="fa-solid fa-file-lines fa-3x"></i>  
+            <h4>Easy Complaint Filing</h4>
+            <p>Submit grievances in a few simple steps.</p>
+        </div>
+    
+        <div class="feature">
+            <i class="fa-solid fa-clock fa-3x"></i>  
+            <h4>Real-Time Tracking</h4>
+            <p>Monitor the status of your complaints anytime.</p>
+        </div>
+    
+        <div class="feature">
+            <i class="fa-solid fa-user-secret fa-3x"></i>  
+            <h4>Anonymous Reporting</h4>
+            <p>Submit complaints anonymously for sensitive issues.</p>
+        </div>
+    </div>    
+</div>
+
+<!-- Contact Section -->
+<div class="contact-section">
+    <h2>Need Help? Contact Us</h2>
+    <p>Email: <a href="mailto:support@pccoestudentportal.com">support@pccoestudentportal.com</a></p>
+    <p>Phone: +91 98765 43210</p>
+</div>
+{% endblock %}

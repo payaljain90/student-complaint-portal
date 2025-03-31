@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>My Profile</title>{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <h2>My Profile</h2>
+    {% if messages %}
+    <div id="message-container">
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+    {% endfor %}
+    </div>
+    
+    <script>
+    setTimeout(function() {
+        var msgContainer = document.getElementById("message-container");
+        if (msgContainer) {
+            msgContainer.style.opacity = "0";  // Fade out effect
+            setTimeout(() => msgContainer.style.display = "none", 500); // Hide after fade-out
+        }
+    }, 3000); // Message disappears after 3 seconds
+    </script>
+    {% endif %}
+
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>PRN</label>
+            <input type="text" value="{{ student.prn }}" disabled>
+        </div>
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" value="{{ student.name }}" disabled>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" value="{{ student.email }}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="text" name="mobile" id="txtmobile" value="{{ student.mobile_number }}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Department</label>
+            <input type="text" value="{{ student.department }}" disabled>
+        </div>
+
+        <div class="form-group">
+            <label>Course</label>
+            <input type="text" value="{{ student.course }}" disabled>
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <textarea name="address" id="txtaddress">{{ student.address }}</textarea>
+        </div>
+
+        <!-- Button for saving profile changes -->
+        <button type="submit" class="btn" name="update_profile">Save Profile Changes</button>
+    </form>
+
+    <h3>Change Password</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="password-container">
+            <input type="password" name="old_password" placeholder="Old Password" id="txtpass1">
+            <input type="password" name="new_password" placeholder="New Password" id="txtpass2">
+            <input type="password" name="confirm_password" placeholder="Confirm Password" id="txtpass3">
+        </div>
+
+        <!-- Button for changing password -->
+        <button type="submit" class="btn" name="change_password">Change Password</button>
+    </form>
+</div>
+{% endblock %}
